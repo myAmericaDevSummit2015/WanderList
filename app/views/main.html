@@ -1,0 +1,70 @@
+<div class="container-fluid questionsHolder">
+
+	<div class="container">
+		<div class="col-sm-12 logo">
+			<h1>WanderList: Find Your Public Lands Adventure</h1>
+		</div>
+		<div class="col-sm-12 col-lg-3">
+			<div class="row mainPageRow explanationHolder">
+				<p><strong>WanderList</strong> is a easy way to create lists of your outdoor adventures.<br /><br /> It allows you to search,
+					create, share your own curated lists that highlight your favorite parks into <strong>WanderLists</strong>.</p>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-offset-1 col-lg-8">
+			<form>
+                <div class="row mainPageRow">
+                    <div class="col-sm-5">
+                        <p>What is your email address?</p>
+                    </div>
+                    <div class="col-sm-7">
+                        <input ng-model="email" type="email">
+                    </div>
+                </div>
+
+				<div class="row mainPageRow">
+					<div class="col-sm-3">
+						<p>What are your interests?</p>
+					</div>
+					<div class="col-sm-9">
+						<ul class="interestSelectionHolder">
+							<li ng-repeat="(interest, selected) in interests" class="interestSelection" ng-class="{'active':toggle}" ng-click="toggle = !toggle; checkChange(!selected, interest)" ng-model="activities.interest">{{interest}}</li>
+						</ul>
+					</div>
+				</div>
+
+                <div class="row mainPageRow">
+                    <div class="col-sm-5">
+                        <p>Where would you like to adventure?</p>
+                    </div>
+                    <div class="col-sm-7">
+						<ul class="interestSelectionHolder secondOptions">
+							<li ng-repeat="(radius, selected) in secondOptions" class="interestSelection" ng-class="activeChoice[$index]" ng-click="showThird(radius, $index)">{{radius}}</li>
+						</ul>
+                    </div>
+                </div>
+
+				<div class="row mainPageRow ng-hide" ng-show="elsewhere">
+					<div class="col-sm-5">
+						<p>Which state?</p>
+					</div>
+					<div class="col-sm-7">
+						<select ng-change="thirdAnswered(whichState)" ng-model="whichState" class="form-control m-b" ng-options="o as o.stateName for o in usStates"></select>
+					</div>
+				</div>
+
+				<div class="row mainPageRow ng-hide" ng-show="nearMe">
+					<div class="col-sm-5">
+						<p>How far are you willing to travel?</p>
+					</div>
+					<div class="col-sm-7">
+						<select ng-change="thirdAnswered(secondAnswer)" ng-options="item for item in thirdOptions" ng-model="secondAnswer" class="form-control m-b" name="account"></select>
+					</div>
+				</div>
+
+                <div class="row buttonHolder" align="center">
+                    <button ng-click="goToResults()" ng-class="submitButtonClass" class="btn recommendationButton">See Recommendations</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

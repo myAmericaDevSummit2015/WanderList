@@ -1,0 +1,15 @@
+development:
+  sessions:
+    default:
+      database: mydb
+      hosts:
+        - 52.4.251.23:8081
+      username: myDbAdmin
+      password: adminpass
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ<em>URL'] %>
+      options:
+        skip_version_check: true
+        safe: true

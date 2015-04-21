@@ -1,0 +1,305 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+// endbower
+
+// Table of Contents
+// Variable Settings
+//
+// a. Base
+// b. Global
+// c. Typography
+// d. Media Query Ranges
+// 01. Header
+// 02. Branding
+// 03. Login
+// 04. Footer
+
+// a. Base
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$base-font-size: 16px;
+$base-line-height: 1.4;
+
+// b. Global
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$primary-color: #1d7dc1; //blue
+$secondary-color: #5ea845; //green
+$accent-color: #ff8400; //orange
+$red-color: #EF492C; //red
+$neutral-color: #cccccc; //gray
+$header-color: #666; //dark grey
+
+$white: #FFF;
+$black: #000;
+
+$body-background: #ffffff;
+$body-font-color: #222222;
+$body-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font-weight: normal;
+
+// c. Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$header-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$h1-font-size: 32px;
+$h2-font-size: 28px;
+$h3-font-size: 22px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+$h6-font-size: 14px;
+
+$paragraph-size: 14px;
+
+
+/*
+$h1-aside-font-size: 2.125rem;
+$h2-aside-font-size: 1.6875rem;
+$h3-aside-font-size: 1.375rem;
+$h4-aside-font-size: 1.125rem;
+$h5-aside-font-size: 1.125rem;
+$h6-aside-font-size: 1rem;
+*/
+
+// d. Media Query Ranges
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$width-small: "screen and (max-width: 640px)";
+$width-medium: "screen and (max-width: 1024px)";
+$width-large: "screen and (max-width: 1230px)";
+
+
+body {
+	background-color: $white;
+}
+
+.top-navigation .wrapper.wrapper-content {
+	padding: 36px 0 56px;
+}
+
+.navbar {
+	background-color: $white;
+	border: 0;
+	border-radius: 0;
+	color: $header-color;
+
+	.navbar-brand {
+		img {
+			height: 20px;
+		}
+	}
+}
+
+.questionsHolder{
+	background: url('../images/background.jpg') center top no-repeat;
+	margin: 0;
+	padding: 0;
+
+	.logo {
+		text-align: center;
+		font-size: 32px;
+
+		h1 {
+			margin-top: 10px;
+			margin-bottom: 0px;
+		}
+	}
+
+	.mainPageRow {
+		background-color: white;
+		padding: 15px;
+		font-size: 16px;
+		color: $header-color;
+		border-left: 10px solid $secondary-color;
+		border-radius: 5px;
+		margin-top: 15px;
+
+		input {
+			padding: 1px 5px;
+			font-size: 16px;
+			width: 100%;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		.secondOptions {
+			li {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.explanationHolder {
+		font-size: 18px;
+		border-left: 10px solid $primary-color;
+
+		strong {
+			color: $primary-color;
+		}
+	}
+
+	.interestSelectionHolder {
+		list-style-type: none;
+		padding-left: 0;
+		margin-bottom: 0;
+
+		li:focus {
+			outline: 0;
+		}
+
+		.interestSelection {
+			background-color: $white;
+			display: inline-block;
+			border-left: 5px solid $secondary-color;
+			border-right: 1px solid $secondary-color;
+			border-top: 1px solid $secondary-color;
+			border-bottom: 1px solid $secondary-color;
+			border-radius: 3px;
+			padding: 5px 10px;
+			margin: 0 10px 10px 0;
+			text-decoration: none;
+			user-select: none;
+		}
+
+		.active{
+			background-color: $secondary-color;
+			color: white;
+		}
+	}
+
+	.buttonHolder {
+		margin: 15px 0;
+
+		.recommendationButton, .recommendationButton:hover, .recommendationButton:focus {
+			font-size: 18px;
+		}
+
+		.inactive, .inactive:hover, .inactive:focus {
+			background-color: $white;
+			color: $header-color;
+			padding: 10px 15px;
+		}
+
+		.active, .active:hover, .active:focus {
+			background-color: $primary-color;
+			color: $white;
+			padding: 10px 15px;
+		}
+	}
+}
+
+.resultsView {
+	padding: 0;
+	max-height: 800px;
+
+	@media (min-width: 768px) {
+		.sidebar, .listResults, #mapResults {
+			height: 600px;
+			overflow: scroll;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.sidebar, .listResults, #mapResults {
+			min-height: 300px;
+			overflow: scroll;
+		}
+	}
+
+	.pageTitle {
+		text-align: center;
+		background-color: $secondary-color;
+		color: $white;
+
+		h1 {
+			margin-bottom: 20px;
+		}
+	}
+
+	.sidebar {
+		background-color: $header-color;
+		color: $white;
+		padding: 20px;
+	}
+
+	.listResults {
+		padding: 20px;
+
+		.listResultObject {
+			background-color: $white;
+			padding: 15px;
+			font-size: 16px;
+			color: $header-color;
+			border-left: 10px solid $secondary-color;
+			border-right: 1px solid $secondary-color;
+			border-top: 1px solid $secondary-color;
+			border-bottom: 1px solid $secondary-color;
+			border-radius: 5px;
+			margin-bottom: 20px;
+
+			h2 {
+				margin-top: 0px;
+				font-size: 24px;
+
+			}
+
+			p {
+				font-size: 12px;
+			}
+
+			.completedCheckbox {
+				font-size: 16px;
+				margin: 10px auto;
+
+				label {
+					margin-right: 5px;
+				}
+			}
+
+			.detailsButton, .saveButton {
+				color: $white;
+				padding: 10px 15px;
+				font-size: 16px;
+			}
+
+			.detailsButton {
+				background-color: $secondary-color;
+			}
+
+			.saveButton {
+				background-color: $primary-color;
+			}
+
+			.deleteButton {
+				background-color: $red-color;
+			}
+		}
+	}
+
+	.modal-content {
+		border-left: 10px solid $primary-color;
+	}
+
+	.mapResults {
+		padding: 20px;
+	}
+}
+
+.footer {
+	padding: 20px auto;
+	background-color: $white;
+	text-align: center;
+
+	p {
+		font-size: 14px;
+		margin: 30px auto;
+	}
+
+	a, a:hover, a:focus {
+		color: $primary-color;
+		font-weight: bold;
+	}
+}
