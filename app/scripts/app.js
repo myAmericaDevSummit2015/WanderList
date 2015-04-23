@@ -22,6 +22,7 @@ angular
   ])
   .constant('RIDB_API_KEY', 'PLACE KEY HERE')
   .constant('RIDB_API_URL', 'https://ridb.recreation.gov/api/v1')
+  .constant('WanderListApi', 'WanderListApi Url and Port')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

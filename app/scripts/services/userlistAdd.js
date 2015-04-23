@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('myAmericaApp').factory('UserList', function($resource) {
-  var UserList = $resource('http://52.4.251.23:8080/userList/add');
+angular.module('myAmericaApp').factory('UserList', function($resource, WanderListApi) {
+  var UserList = $resource(WanderListApi + 'userList/add');
 
   function create( body, callback) {
     var UserListCreate = UserList.bind();
