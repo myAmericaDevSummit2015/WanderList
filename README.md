@@ -15,7 +15,7 @@ curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
 ```
 
 2.) Install node.
-``` bash 
+``` bash
 nvm install stable
 ```
 
@@ -51,6 +51,9 @@ bower install
 grunt serve
 ```
 
+## Install the API
+Follow the instructions in api/README
+
 ## Helpful Tips
 
 1.) If you are having problems running bower install, check to make sure the git protocol is not blocked by your firewall.  To configure the default to use https instead of the git protocol, use the following commands:
@@ -75,4 +78,4 @@ git config --global --unset
 
 ##License
 
-Add the open source license here.
+See license.md
